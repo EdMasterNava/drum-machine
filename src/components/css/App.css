@@ -1,64 +1,80 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
 
-/* Remove default margin, padding, & font */
-* {
+:root {
+  --purple: #8769f0;
+  --yellow: #fcda38;
+  --grey: #999;
+}
+body{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
   margin: 0;
-  padding: 0;
-  font: inherit;
 }
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+#background{
+  background: var(--grey);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
+#drum-machine{
+  background: var(--purple);
+  width: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 5px 20px;
+  border: 3px solid var(--yellow);
+  border-radius: 5%;
 }
-
-html,
-body {
-  height: 100%;
+#drum-machine-border{
+  border: 3px solid black;
+  border-radius: 5%;
 }
-
-/* Set core body defaults */
-body {
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+#pad-container{
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+  gap: 3px;
+  background: var(--yellow);
+  width: 400px;
+  height: 350px;
+  padding: 5px 5px 6px;
+  border: 3px solid black;
+  border-radius: 2%;
 }
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
+#display{
+  width: 83%;
+  display: flex;
+  justify-content: space-between;
   
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+}
+#display-name{
+  background: var(--yellow);
+  padding: 10px;
+  border-radius: 5%;
+  border: 2px solid black;
+  width: 54%;
+  text-align: center;
+}
+.drum-pad{
+  border: 2px solid black;
+  border-radius: 5%;
+}
+#bank{
+  flex-direction: column;
+}
+#bank-name{
+  text-align: center;
+}
+#bank-switch{
+  margin-top: 0;
+  background: var(--yellow);
+  width: 80%;
+  height: 30px;
+  border-radius: 10%;
 }
